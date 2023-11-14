@@ -1,11 +1,13 @@
+import styles from "./Header.module.css";
+
 export default function Header() {
     return (
-        <header>
-            <p>
+        <header className={styles.siteHeader}>
+            <h1 className={styles.siteTitle}>
                 <a href="#">Dish Diary</a>
-            </p>
+            </h1>
 
-            <nav>
+            <nav className={styles.siteNav}>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">All Recipes</a></li>

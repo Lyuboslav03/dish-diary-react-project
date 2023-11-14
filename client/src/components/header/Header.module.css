@@ -1,0 +1,26 @@
+.siteHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.siteTitle a {
+    display: block;
+    text-decoration: none;
+    color: #353b48;
+}
+
+.siteNav ul {
+    display: flex;
+}
+
+.siteNav li {
+    display: block;
+}
+
+.siteNav a {
+    display: block;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    color: #2d3436;
+}
