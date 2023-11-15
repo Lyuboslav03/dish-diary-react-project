@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .siteTitle a {
@@ -23,4 +24,9 @@
     text-decoration: none;
     padding: 0.5em 1em;
     color: #2d3436;
+    font-size: 17px;
+}
+
+.siteNav a:hover {
+    background-color: #f5f6fa;
 }
