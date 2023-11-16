@@ -1,11 +1,12 @@
 import styles from "./Header.module.css";
+import logo from "../../assets/logo.png";
 
 export default function Header() {
     return (
         <header className={styles.siteHeader}>
             <div className={styles.headerContainer}>
-                <h1 className={styles.siteTitle}>
-                    <a href="#">Dish Diary</a>
+                <h1 className={styles.siteLogo}>
+                    <a href="#"><img src={logo} alt="Site logo" /></a>
                 </h1>
 
                 <nav className={styles.siteNav}>

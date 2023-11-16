@@ -10,13 +10,6 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.siteTitle a {
-    display: block;
-    text-decoration: none;
-    color: #353b48;
-    text-align: center;
-}
-
 .siteNav ul {
     display: flex;
 }
