@@ -1,3 +1,8 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .siteHeader {
     display: flex;
     justify-content: space-around;
@@ -9,6 +14,7 @@
     display: block;
     text-decoration: none;
     color: #353b48;
+    text-align: center;
 }
 
 .siteNav ul {
