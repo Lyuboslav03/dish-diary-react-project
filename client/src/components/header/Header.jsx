@@ -5,9 +5,11 @@ export default function Header() {
     return (
         <header className={styles.siteHeader}>
             <div className={styles.headerContainer}>
-                <h1 className={styles.siteLogo}>
-                    <a href="#"><img src={logo} alt="Site logo" /></a>
-                </h1>
+                <div className={styles.logoContainer}>
+                    <a href="#">
+                        <img className={styles.siteLogo} src={logo} alt="Site logo" />
+                    </a>
+                </div>
 
                 <nav className={styles.siteNav}>
                     <ul>

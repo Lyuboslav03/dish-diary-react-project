@@ -10,6 +10,15 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.logoContainer {
+    text-align: center;
+}
+
+.siteLogo {
+    width: 150px;
+    height: auto;
+}
+
 .siteNav ul {
     display: flex;
 }
