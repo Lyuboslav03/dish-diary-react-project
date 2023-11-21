@@ -8,11 +8,16 @@ import logo from "../../assets/logo.png";
 export default function Header() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
-                <Navbar.Brand href="/">Dish Diary</Navbar.Brand>
+            <Container className={styles.headerContainer}>
+                <Navbar.Brand href="/">
+                    <div className={styles.logoContainer}>
+                        <img className={styles.logo} src={logo} alt="Site logo" />
+                        <span>Dish Diary</span>
+                    </div>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav className={styles.siteNavbar}>
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/all-recipes">All Recipes</Nav.Link>
                         <Nav.Link href="/add-recipe">Add Recipe</Nav.Link>
