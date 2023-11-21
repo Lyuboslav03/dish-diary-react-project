@@ -1,27 +1,27 @@
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.png";
 
 export default function Header() {
     return (
-        <header className={styles.siteHeader}>
-            <div className={styles.headerContainer}>
-                <div className={styles.logoContainer}>
-                    <a href="#">
-                        <img className={styles.siteLogo} src={logo} alt="Site logo" />
-                    </a>
-                </div>
-
-                <nav className={styles.siteNav}>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">All Recipes</a></li>
-                        <li><a href="#">Add Recipe</a></li>
-                        <li><a href="#">Logout</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <Navbar expand="lg" className="bg-body-tertiary">
+            <Container>
+                <Navbar.Brand href="/">Dish Diary</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/all-recipes">All Recipes</Nav.Link>
+                        <Nav.Link href="/add-recipe">Add Recipe</Nav.Link>
+                        <Nav.Link href="/logout">Logout</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/register">Register</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     );
 }
