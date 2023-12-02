@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerPage {
+    background-color: #FCF9EF;
+    width: 500px;
+    height: auto;
+    border-radius: 1.2em;
+    padding: 2.5em;
+    margin: 0 auto;
+    margin-top: 2.5em;
+}
+
+.registerPage h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.registerPage p {
+    text-align: center;
+}
+
+.registerPage input {
+    padding: 0 0.8em 0 0.8em;
+
+}
+
+.registerPage label,
+.registerPage input {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.btnSubmit {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    border-radius: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    background-color: lightblue;
+}
+
+.btnSubmit:hover {
+    background-color: #5a94c5;
+}
