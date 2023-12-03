@@ -23,8 +23,23 @@ function App() {
         navigate("/");
     };
 
+    const registerSubmitHandler = async (values) => {
+        if (values.password !== values['repeat-password']) {
+            alert("Passwords do not match!");
+
+            return;
+        }
+        
+        const result = await authService.register(values.email, values.password);
+
+        setAuth(result);
+
+        navigate("/");
+    };
+
     const values = {
         loginSubmitHandler,
+        registerSubmitHandler,
         username: auth.username || auth.email,
         email: auth.email,
         isAuthenticated: !!auth.email,
