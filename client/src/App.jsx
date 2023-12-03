@@ -13,7 +13,11 @@ import Logout from "./components/logout/Logout";
 import "./App.css";
 
 function App() {
-    const [auth, setAuth] = useState({});
+    const [auth, setAuth] = useState(() => {
+        localStorage.removeItem("accessToken");
+
+        return {};
+    });
     const navigate = useNavigate();
 
     const loginSubmitHandler = async (values) => {
