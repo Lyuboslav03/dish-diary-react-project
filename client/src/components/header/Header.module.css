@@ -3,6 +3,11 @@
     flex-direction: column;
 }
 
+.user,
+.guest {
+    display: flex;
+}
+
 .logoContainer {
     width: 130px;
     height: auto;

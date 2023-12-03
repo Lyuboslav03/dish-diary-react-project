@@ -23,8 +23,15 @@ function App() {
         navigate("/");
     };
 
+    const values = {
+        loginSubmitHandler,
+        username: auth.username || auth.email,
+        email: auth.email,
+        isAuthenticated: !!auth.email,
+    };
+
     return (
-        <AuthContext.Provider value={{ loginSubmitHandler }}>
+        <AuthContext.Provider value={values}>
             <Header />
 
             <Routes>
