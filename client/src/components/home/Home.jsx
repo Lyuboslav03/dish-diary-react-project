@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -9,7 +11,7 @@ export default function Home() {
                     <img src="./images/home-logo.png" />
                     <h3>#1 Recipe Source for mouth-watering homemade goodies!</h3>
                     <div className={styles.btnContainer}>
-                        <a href="/all-recipes" className={styles.recipesBtn}>View all recipes</a>
+                        <Link to="/all-recipes" className={styles.recipesBtn}>View all recipes</Link>
                     </div>
                 </div>
             </div>
