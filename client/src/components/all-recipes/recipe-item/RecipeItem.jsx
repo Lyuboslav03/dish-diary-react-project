@@ -15,7 +15,7 @@ export default function RecipeItem({
                 </div>
                 <h3>{name}</h3>
                 <div className={styles.btnContainer}>
-                    <Link href={`/all-recipes/${_id}`} className={styles.detailsBtn}>Details</Link>
+                    <Link to={`/all-recipes/${_id}`} className={styles.detailsBtn}>Details</Link>
                 </div>
             </div>
         </div>

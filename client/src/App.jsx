@@ -7,6 +7,7 @@ import AuthContext from "./contexts/authContext";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import AllRecipes from "./components/all-recipes/AllRecipes";
+import RecipeDetails from "./components/recipe-details/RecipeDetails";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Logout from "./components/logout/Logout";
@@ -70,6 +71,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/all-recipes" element={<AllRecipes />} />
+                <Route path="/all-recipes/:recipeId" element={<RecipeDetails />} />
                 <Route path="/logout" element={<Logout />} />
             </Routes>
 
