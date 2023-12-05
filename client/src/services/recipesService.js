@@ -7,3 +7,9 @@ export const getRecipes = async () => {
 
     return result;
 };
+
+export const getOneRecipe = async (recipeId) => {
+    const result = await request.get(`${baseUrl}/${recipeId}`);
+
+    return result;
+};
