@@ -13,3 +13,15 @@ export const getOneRecipe = async (recipeId) => {
 
     return result;
 };
+
+export const createRecipe = async (data) => {
+    const result = await request.post(`${baseUrl}`, data);
+
+    return result;
+};
+
+export const editRecipe = async (recipeId, data) => {
+    const result = await request.put(`${baseUrl}/${recipeId}`, data)
+
+    return result;
+};
