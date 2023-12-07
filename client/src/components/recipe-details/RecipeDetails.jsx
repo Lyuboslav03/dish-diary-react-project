@@ -34,7 +34,7 @@ export default function RecipeDetails() {
                 <h4>Ingredients:</h4>
                 <div className={styles.ingredients}>
                     <ul>
-                        {recipe.ingredients && recipe.ingredients.split(", ").map((ingredient, index) => (
+                        {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
                             <li key={index}>{ingredient}</li>
                         ))}
                     </ul>
@@ -42,7 +42,7 @@ export default function RecipeDetails() {
                 <h4>Steps:</h4>
                 <div className={styles.steps}>
                     <ol>
-                        {recipe.steps && recipe.steps.split(", ").map((step, index) => (
+                        {recipe.steps && recipe.steps.map((step, index) => (
                             <li key={index}>{step}</li>
                         ))}
                     </ol>
