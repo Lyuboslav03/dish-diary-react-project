@@ -8,6 +8,8 @@ import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import AllRecipes from "./components/all-recipes/AllRecipes";
 import RecipeDetails from "./components/recipe-details/RecipeDetails";
+import AddRecipe from "./components/add-recipe/AddRecipe";
+import EditRecipe from "./components/edit-recipe/EditRecipe";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Logout from "./components/logout/Logout";
@@ -59,6 +61,7 @@ function App() {
         logoutHandler,
         username: auth.username || auth.email,
         email: auth.email,
+        id: auth._id,
         isAuthenticated: !!auth.email,
     };
 
@@ -72,6 +75,8 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/all-recipes" element={<AllRecipes />} />
                 <Route path="/all-recipes/:recipeId" element={<RecipeDetails />} />
+                <Route path="/add-recipe" element={<AddRecipe />} />
+                <Route path="/all-recipes/:recipeId/edit-recipe" element={<EditRecipe />} />
                 <Route path="/logout" element={<Logout />} />
             </Routes>
 
