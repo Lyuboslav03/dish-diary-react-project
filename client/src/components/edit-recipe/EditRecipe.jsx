@@ -18,7 +18,12 @@ export default function EditRecipe() {
     useEffect(() => {
         recipesService.getOneRecipe(recipeId)
             .then(result => {
-                setRecipe(result);
+                setRecipe({
+                    name: result.name,
+                    img: result.img,
+                    ingredients: result.ingredients.join("\n"),
+                    steps: result.steps.join("\n")
+                });
             })
     }, [recipeId])
 
@@ -33,9 +38,16 @@ export default function EditRecipe() {
         e.preventDefault();
 
         const values = Object.fromEntries(new FormData(e.currentTarget));
+
+        const data = {
+            name: values.name,
+            img: values.img,
+            ingredients: values.ingredients.split("\n"),
+            steps: values.steps.split("\n")
+        };
         
         try {
-            await recipesService.editRecipe(recipeId, values);
+            await recipesService.editRecipe(recipeId, data);
             
             navigate(`/all-recipes/${recipeId}`);
         } catch (error) {
