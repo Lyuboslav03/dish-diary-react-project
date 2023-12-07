@@ -1345,24 +1345,38 @@
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 name: "Banana Pancakes",
                 img: "https://www.lifeloveandsugar.com/wp-content/uploads/2021/07/Banana-Pancakes3.jpg",
-                ingredients: "Bananas, Flour, Sugar, Baking Powder, Salt, Eggs, Milk",
-                steps: "Warm up a lightly oiled pan, Combine the ingredients in a bowl and stir, Pour the mixture onto the pan and cook evenly on both sides",
+                ingredients: [
+                    "Bananas", "Flour", "Sugar", "Baking Powder", "Salt", "Eggs", "Milk"
+                ],
+                steps: [
+                    "Warm up a lightly oiled pan",
+                    "Combine the ingredients in a bowl and stir",
+                    "Pour the mixture onto the pan and cook evenly on both sides"
+                ],
                 _createdOn: 1701723575590
             },
             "fc5873dd-9bee-4dea-a649-2a8d69c2053a": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 name: "Chicken Burgers",
                 img: "https://www.tamingtwins.com/wp-content/uploads/2023/06/image-25.jpeg",
-                ingredients: "Ground chicken, Bread crumbs, Onion, Egg, Seasonings",
-                steps: "Mix the ingredients in a bowl and shape the mixture into oval-shaped patties, Coat the patties into the remaining bread crumbs, Cook the patties evenly until they are deeply brown on both sides",
+                ingredients: [
+                    "Ground chicken", "Bread crumbs", "Onion", "Egg", "Seasonings"
+                ],
+                steps: [
+                    "Mix the ingredients in a bowl and shape the mixture into oval-shaped patties", "Coat the patties into the remaining bread crumbs", "Cook the patties evenly until they are deeply brown on both sides"
+                ],
                 _createdOn: 1701724037162
             },
             "25854a10-b6d3-478c-ba86-d10acfca56ef": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 name: "Grilled Cheese Sandwich",
                 img: "https://www.eatingonadime.com/wp-content/uploads/2020/02/how-to-make-grilled-cheese-6square.jpg",
-                ingredients: "White bread, Sliced cheese, Butter",
-                steps: "Butter the bread on one side and place the bread on a hot skillet, Top with cheese and place another slice of bread on top, Cook until the bottom slice is lightly browned then flip, Continue cooking until the cheese is melted",
+                ingredients: [
+                    "White bread", "Sliced cheese", "Butter"
+                ],
+                steps: [
+                    "Butter the bread on one side and place the bread on a hot skillet", "Top with cheese and place another slice of bread on top", "Cook until the bottom slice is lightly browned then flip", "Continue cooking until the cheese is melted"
+                ],
                 _createdOn: 1701724468649
             }
         },
