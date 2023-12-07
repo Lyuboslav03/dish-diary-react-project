@@ -7,15 +7,15 @@ import styles from "./AddRecipe.module.css";
 
 export default function AddRecipe() {
     const navigate = useNavigate();
-    
-    const createRecipeSubmitHandler = async (values) => {       
+
+    const createRecipeSubmitHandler = async (values) => {
         const data = {
             name: values.name,
             img: values.img,
-            ingredients: values.ingredients,
-            steps: values.steps.replace("\n", ",")
+            ingredients: values.ingredients.split("\n"),
+            steps: values.steps.split("\n"),
         }
-        
+
         try {
             await recipesService.createRecipe(data);
 
@@ -27,13 +27,13 @@ export default function AddRecipe() {
         }
     };
 
-    const { values, errors, onChange, onSubmit } = useForm(createRecipeSubmitHandler, {
+    const { values, onChange, onSubmit } = useForm(createRecipeSubmitHandler, {
         name: '',
         img: '',
         ingredients: '',
         steps: '',
     })
-    
+
     return (
         <div className={styles.recipeInfo}>
             <form onSubmit={onSubmit}>
@@ -50,7 +50,6 @@ export default function AddRecipe() {
 
                 <label htmlFor="steps">Steps:</label>
                 <textarea name="steps" id="steps" onChange={onChange} value={values.steps} placeholder="Enter steps separated by comma..."></textarea>
-                {errors && <p>{errors.steps}</p>}
 
                 <input type="submit" className={styles.btnSubmit} value="Add Recipe" />
             </form>
