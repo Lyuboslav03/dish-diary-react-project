@@ -14,7 +14,7 @@ const RegisterFormKeys = {
 
 export default function Register () {
     const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    const { values, inputErrors, submitError, onChange, onSubmit } = useForm(registerSubmitHandler, {
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.RepeatPassword]: ''
@@ -28,12 +28,16 @@ export default function Register () {
 
                     <label htmlFor="email">Email:</label>
                     <input type="email" name="email" onChange={onChange} value={values[RegisterFormKeys.Email]} />
+                    {inputErrors && <p>{inputErrors[RegisterFormKeys.Email]}</p>}
+                    {submitError && <p>{submitError}</p>}
 
                     <label htmlFor="register-pass">Password:</label>
                     <input type="password" name="password" onChange={onChange} value={values[RegisterFormKeys.Password]} />
+                    {inputErrors && <p>{inputErrors[RegisterFormKeys.Password]}</p>}
 
                     <label htmlFor="repeat-pass">Repeat Password:</label>
                     <input type="password" name="repeat-password" onChange={onChange} value={values[RegisterFormKeys.RepeatPassword]} />
+                    {inputErrors && <p>{inputErrors[RegisterFormKeys.RepeatPassword]}</p>}
 
                     <input type="submit" className={styles.btnSubmit} value="Register"/>
 
