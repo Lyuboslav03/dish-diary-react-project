@@ -8,7 +8,7 @@ import styles from "./Login.module.css";
 
 export default function Login() {
     const { loginSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    const { values, inputErrors, submitError, onChange, onSubmit } = useForm(loginSubmitHandler, {
         email: '',
         password: '',
     });
@@ -20,9 +20,13 @@ export default function Login() {
                     <h2>Login</h2>
                     <label htmlFor="email">Email:</label>
                     <input type="email" name="email" onChange={onChange} value={values.email} />
+                    {inputErrors && <p>{inputErrors.email}</p>}
+                    {submitError && <p>{submitError}</p>}
 
                     <label htmlFor="login-pass">Password:</label>
                     <input type="password" name="password" onChange={onChange} value={values.password} />
+                    {inputErrors && <p>{inputErrors.password}</p>}
+                    {submitError && <p>{submitError}</p>}
 
                     <input type="submit" className={styles.btnSubmit} value="Login" />
 
