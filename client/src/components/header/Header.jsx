@@ -33,6 +33,7 @@ export default function Header() {
                         {isAuthenticated && (
                             <div className={styles.user}>
                                 <Nav.Link as={Link} to="/add-recipe">Add Recipe</Nav.Link>
+                                <Nav.Link as={Link} to="/my-profile">My Profile</Nav.Link>
                                 <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
                             </div>
                         )}
