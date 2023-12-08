@@ -1,6 +1,4 @@
-.recipeContainer {
-    display: flex;
-    gap: 2em;
+.mainContainer {
     padding: 2.5em;
     background-color: #fff;
     box-shadow: 0 10px 10px 4px rgba(0, 0, 0, 0.2);
@@ -9,6 +7,22 @@
     height: auto;
     margin: 0 auto;
     margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+
+.recipeContainer {
+    display: flex;
+    gap: 2em;
+}
+
+.recipe h3 {
+    text-align: center;
+    margin-top: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .media {
@@ -27,4 +41,73 @@
 .recipeInfo h4 {
     font-style: italic;
     text-align: center;
+}
+
+.comments h4 {
+    text-align: center;
+    margin-top: 0.8em;
+}
+
+.comment ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-bottom: 2em;
+}
+
+.comment ul li {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc(33.33% - 20px);
+    box-sizing: border-box;
+    padding: 0em 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+.commentContainer {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.commenter {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.commentContent {
+    margin-top: 5px;
+}
+
+.noComments {
+    text-align: center;
+}
+
+.formSubmit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formSubmit textarea {
+    min-width: 20vw;
+    min-height: 10vh;
+    width: 60%;
+    margin-top: 1.5em;
+}
+
+.btnSubmit {
+    display: block;
+    padding: 0.5em 1em;
+    margin-top: 1.5em;
+    border: none;
+    outline: none;
+    border-radius: 1em;
+}
+
+.btnSubmit:hover {
+    background-color: #eee;
 }
