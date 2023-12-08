@@ -26,27 +26,36 @@ function App() {
     const navigate = useNavigate();
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
-
-        localStorage.setItem("accessToken", result.accessToken);
-        setAuth(result);
-
-        navigate("/");
+        try {
+            const result = await authService.login(values.email, values.password);
+    
+            localStorage.setItem("accessToken", result.accessToken);
+            setAuth(result);
+    
+            navigate("/");
+            
+            return { result: result, error: null }
+            
+        } catch (error) {
+            return { result: null, error: error.message }
+        }
     };
 
     const registerSubmitHandler = async (values) => {
-        if (values.password !== values['repeat-password']) {
-            alert("Passwords do not match!");
+        try {
+            const result = await authService.register(values.email, values.password);
+    
+            localStorage.setItem("accessToken", result.accessToken);
+            setAuth(result);
+    
+            navigate("/");
 
-            return;
+            return { result, error: null }
+            
+        } catch (error) {
+            return { result: null, error: error.message }
         }
         
-        const result = await authService.register(values.email, values.password);
-
-        localStorage.setItem("accessToken", result.accessToken);
-        setAuth(result);
-
-        navigate("/");
     };
 
     const logoutHandler = () => {
