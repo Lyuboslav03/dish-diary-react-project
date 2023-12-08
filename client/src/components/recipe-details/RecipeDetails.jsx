@@ -28,10 +28,12 @@ export default function RecipeDetails() {
 
         setComments(state => [...state, result]);
 
+        resetField();
+
         return result;
     }
 
-    const { values, onChange, onSubmit } = useForm(addCommentSubmitHandler, {
+    const { values, onChange, onSubmit, resetField } = useForm(addCommentSubmitHandler, {
         comment: ''
     });
 
