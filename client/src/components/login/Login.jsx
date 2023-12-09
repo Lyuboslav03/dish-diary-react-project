@@ -20,13 +20,13 @@ export default function Login() {
                     <h2>Login</h2>
                     <label htmlFor="email">Email:</label>
                     <input type="email" name="email" onChange={onChange} value={values.email} />
-                    {inputErrors && <p>{inputErrors.email}</p>}
-                    {submitError && <p>{submitError}</p>}
+                    {inputErrors && <p className="error">{inputErrors.email}</p>}
+                    {submitError && <p className="error">{submitError}</p>}
 
                     <label htmlFor="login-pass">Password:</label>
                     <input type="password" name="password" onChange={onChange} value={values.password} />
-                    {inputErrors && <p>{inputErrors.password}</p>}
-                    {submitError && <p>{submitError}</p>}
+                    {inputErrors && <p className="error">{inputErrors.password}</p>}
+                    {submitError && <p className="error">{submitError}</p>}
 
                     <input type="submit" className={styles.btnSubmit} value="Login" />
 
