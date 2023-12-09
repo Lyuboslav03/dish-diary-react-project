@@ -16,3 +16,11 @@
     flex-wrap: wrap;
     margin-left: 1em;
 }
+
+.noRecipes {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 1.5em;
+    text-transform: uppercase;
+    width: 100%;
+}
