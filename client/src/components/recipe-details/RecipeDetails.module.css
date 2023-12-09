@@ -38,6 +38,12 @@
     object-fit: cover;
 }
 
+.recipeInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .recipeInfo h4 {
     font-style: italic;
     text-align: center;
@@ -98,6 +104,41 @@
     width: 60%;
     margin-top: 1.5em;
 }
+
+.btns {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+
+.editBtn {
+    display: block;
+    text-decoration: none;
+    background-color: deepskyblue;
+    padding: 1em 1.3em;
+    border-radius: 1.5em;
+    color: #fff;
+    font-weight: bold;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.deleteBtn {
+    background-color: red;
+    padding: 0.5em 0.8em;
+    border-radius: 1.5em;
+    display: block;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
 
 .btnSubmit {
     display: block;
