@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import * as recipesService from "../../services/recipesService";
 import { validateInputs } from "../../utils/validateFieldsUtil";
+import { validateStructure } from "../../utils/validateStructure";
 
 import styles from "./EditRecipe.module.css";
 
@@ -14,6 +15,7 @@ export default function EditRecipe() {
         steps: '',
     });
     const [inputErrors, setInputErrors] = useState({});
+    const [structureErrs, setStructureErrs] = useState({});
     const { recipeId } = useParams();
     const navigate = useNavigate();
 
@@ -47,8 +49,9 @@ export default function EditRecipe() {
         const values = Object.fromEntries(new FormData(e.currentTarget));
 
         const errors = validateInputs(values);
+        const typeErrors = validateStructure(values);
 
-        if (Object.keys(errors).length === 0) {
+        if (Object.keys(errors).length === 0 && Object.keys(typeErrors).length === 0) {
             const data = {
                 name: values.name,
                 img: values.img,
@@ -65,8 +68,10 @@ export default function EditRecipe() {
                 throw error;
             }
 
-        } else {
+        } else if (Object.keys(errors).length !== 0) {
             setInputErrors(errors);
+        } else if (Object.keys(typeErrors).length !== 0) {
+            setStructureErrs(typeErrors);
         }
     }
 
@@ -86,10 +91,12 @@ export default function EditRecipe() {
                 <label htmlFor="ingredients">Ingredients:</label>
                 <textarea name="ingredients" id="ingredients" onChange={onChange} value={recipe.ingredients} placeholder="Enter ingredients separated by a new line..."></textarea>
                 {inputErrors && <p className="error">{inputErrors.ingredients}</p>}
+                {structureErrs && <p className="error">{structureErrs.ingredients}</p>}
 
                 <label htmlFor="steps">Steps:</label>
                 <textarea name="steps" id="steps" onChange={onChange} value={recipe.steps} placeholder="Enter steps separated by a new line..."></textarea>
                 {inputErrors && <p className="error">{inputErrors.steps}</p>}
+                {structureErrs && <p className="error">{structureErrs.steps}</p>}
 
                 <input type="submit" className={styles.btnSubmit} value="Edit Recipe" />
             </form>
