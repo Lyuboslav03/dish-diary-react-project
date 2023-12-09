@@ -77,19 +77,19 @@ export default function EditRecipe() {
 
                 <label htmlFor="name">Recipe Name:</label>
                 <input type="text" id="name" name="name" onChange={onChange} value={recipe.name} />
-                {inputErrors && <p>{inputErrors.name}</p>}
+                {inputErrors && <p className="error">{inputErrors.name}</p>}
 
                 <label htmlFor="img">Image url:</label>
                 <input type="text" id="img" name="img" onChange={onChange} value={recipe.img} />
-                {inputErrors && <p>{inputErrors.img}</p>}
+                {inputErrors && <p className="error">{inputErrors.img}</p>}
 
                 <label htmlFor="ingredients">Ingredients:</label>
-                <textarea name="ingredients" id="ingredients" onChange={onChange} value={recipe.ingredients} placeholder="Enter ingredients separated by comma..."></textarea>
-                {inputErrors && <p>{inputErrors.ingredients}</p>}
+                <textarea name="ingredients" id="ingredients" onChange={onChange} value={recipe.ingredients} placeholder="Enter ingredients separated by a new line..."></textarea>
+                {inputErrors && <p className="error">{inputErrors.ingredients}</p>}
 
                 <label htmlFor="steps">Steps:</label>
-                <textarea name="steps" id="steps" onChange={onChange} value={recipe.steps} placeholder="Enter steps separated by comma..."></textarea>
-                {inputErrors && <p>{inputErrors.steps}</p>}
+                <textarea name="steps" id="steps" onChange={onChange} value={recipe.steps} placeholder="Enter steps separated by a new line..."></textarea>
+                {inputErrors && <p className="error">{inputErrors.steps}</p>}
 
                 <input type="submit" className={styles.btnSubmit} value="Edit Recipe" />
             </form>
