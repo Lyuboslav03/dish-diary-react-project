@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 import * as recipesService from "../../services/recipesService";
 import * as commentsService from "../../services/commentsService";
 import AuthContext from "../../contexts/authContext";
 import useForm from "../../hooks/useForm";
 
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import styles from "./RecipeDetails.module.css";
 
 export default function RecipeDetails() {
@@ -13,6 +15,8 @@ export default function RecipeDetails() {
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
     const { id, isAuthenticated, username } = useContext(AuthContext);
+    const [show, setShow] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         recipesService.getOneRecipe(recipeId)
@@ -33,10 +37,20 @@ export default function RecipeDetails() {
         return result;
     }
 
-    const { values, onChange, onSubmit, resetField } = useForm(addCommentSubmitHandler, {
+    
+    const { values, inputErrors, onChange, onSubmit, resetField } = useForm(addCommentSubmitHandler, {
         comment: ''
     });
+    
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    
+    const deleteRecipeSubmitHandler = async () => {
+        await recipesService.deleteRecipe(recipeId);
 
+        navigate("/all-recipes");
+    }
+    
     return (
         <div className={styles.mainContainer}>
 
@@ -50,7 +64,22 @@ export default function RecipeDetails() {
                     {id === recipe._ownerId && (
                         <div className={styles.btns}>
                             <Link className={styles.editBtn} to={`/all-recipes/${recipeId}/edit-recipe`}>Edit</Link>
-                            <Link className={styles.deleteBtn} to="">Delete</Link>
+                            <button className={styles.deleteBtn} onClick={handleShow}>Delete</button>
+
+                            <Modal show={show} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                    <Modal.Title>Delete confirmation</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>Are you sure you'd like to delete this recipe?</Modal.Body>
+                                <Modal.Footer>
+                                    <Button variant="secondary" onClick={handleClose}>
+                                        Cancel
+                                    </Button>
+                                    <Button onClick={deleteRecipeSubmitHandler} variant="primary">
+                                        Yes
+                                    </Button>
+                                </Modal.Footer>
+                            </Modal>
                         </div>
                     )}
                 </div>
@@ -101,6 +130,7 @@ export default function RecipeDetails() {
                     <form className={styles.formSubmit} onSubmit={onSubmit}>
                         <h5>Add comment:</h5>
                         <textarea name="comment" id="comment" onChange={onChange} value={values.comment}></textarea>
+                        {inputErrors && <p className="error">{inputErrors.comment}</p>}
                         <input type="submit" value="Add Comment" className={styles.btnSubmit} />
                     </form>
                 )}
