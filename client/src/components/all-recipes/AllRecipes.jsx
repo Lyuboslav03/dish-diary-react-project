@@ -19,6 +19,10 @@ export default function AllRecipes() {
             <h2>Recipes List</h2>
 
             <div className={styles.allRecipes}>
+                {recipes.length === 0 && (
+                    <p className={styles.noRecipes}>No recipes found...</p>
+                )}
+
                 {recipes.map(recipe => (
                     <RecipeItem key={recipe._id} {...recipe} />
                 ))}
