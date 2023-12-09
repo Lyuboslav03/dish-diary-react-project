@@ -35,3 +35,7 @@ export const editRecipe = async (recipeId, data) => {
 
     return result;
 };
+
+export const deleteRecipe = async (recipeId) => {
+    await request.del(`${baseUrl}/${recipeId}`);
+};
